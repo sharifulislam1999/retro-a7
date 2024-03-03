@@ -116,7 +116,10 @@ function printPosts(posts){
     const response = await fetch("https://openapi.programming-hero.com/api/retro-forum/latest-posts");
     const data = await response.json();
     const posts = data;
+    loadingLatest(true);
+    setTimeout(()=>{
     latestPostPrice(posts);  
+    },2000)
 })();
 function latestPostPrice(post){
    const latestPost = document.getElementById("latestPost");
@@ -166,9 +169,18 @@ function latestPostPrice(post){
     `;
     latestPost.appendChild(mkDiv);
    });
+   loadingLatest(false);
 }
 function loading(toggle){
     const loadingContainer = document.getElementById("loadingContainer");
+    if(toggle){
+        loadingContainer.classList.remove("hidden");
+    }else{
+        loadingContainer.classList.add("hidden");
+    }
+}
+function loadingLatest(toggle){
+    const loadingContainer = document.getElementById("loadingContainerLatest");
     if(toggle){
         loadingContainer.classList.remove("hidden");
     }else{
