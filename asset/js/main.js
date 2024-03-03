@@ -36,13 +36,13 @@ function printPosts(posts){
     mainContainer.innerHTML = "";
     posts.forEach(post => {        
         const mkDiv = document.createElement("div");
-        mkDiv.classList = "flex ease-in	 transition hover:bg-blue-50 hover:border-blue-600 transtion bg-[#F3F3F5] hover:border cursor-pointer items-start p-4 lg:p-10 bg-[#797DFC1A] rounded-[24px] gap-3 lg:gap-6";
+        mkDiv.classList = "flex flex-col md:flex-row ease-in  transition hover:bg-blue-50 hover:border-blue-600 transtion bg-[#F3F3F5] hover:border cursor-pointer items-start p-4 lg:p-10 bg-[#797DFC1A] rounded-[24px] gap-3 lg:gap-6";
         mkDiv.innerHTML = `
         <div class="h-[72px] w-[72px] relative">
             <img class="rounded-2xl w-full" src="${post.image}"/>
             ${post.isActive?`<div class="absolute top-0 right-0 p-2 border border-white rounded-full bg-[#10B981]"></div>`:`<div class="absolute top-0 right-0 p-2 border border-white rounded-full bg-red-500"></div>`}            
         </div>
-        <div class="flex-1 space-y-2">
+        <div class="w-full md:flex-1 space-y-2">
             <div class="flex gap-2 text-[#12132DCC] text-[14px] inter font-medium flex-wrap">
                 <div>
                     <p># <span>${post.category}</span></p>
