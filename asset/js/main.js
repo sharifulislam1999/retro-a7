@@ -10,7 +10,7 @@
 function searchData(){
     const searchInput = document.getElementById("searchInput");
     if(searchInput.value === ""){
-        alert("Please fill input field");
+        alert("Please fill search input field");
     }else{
         getSearchData(searchInput.value);
     }
